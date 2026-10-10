@@ -19,6 +19,6 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Use the port provided by Render
-EXPOSE 8090
+EXPOSE https://dhm-backend.onrender.com
 
-ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8090}"]
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-https://dhm-backend.onrender.com}"]
