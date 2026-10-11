@@ -26,10 +26,10 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration configuration = new CorsConfiguration();
-
+        setAllowedOriginPatterns:
         configuration.setAllowedOrigins(List.of(
-                "https://dhm-frontend.vercel.app",
-                "https://dhm-frontend-t54z.vercel.app"
+                "https://*.vercel.app",
+                "https://dhm-frontend.vercel.app"
         ));
 
         configuration.setAllowedMethods(List.of(
