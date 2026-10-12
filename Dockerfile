@@ -1,8 +1,7 @@
-ENV MAVEN_OPTS="Xmx256m"
-RUN mvn -B -ntp clean package -DskipTests
 # Stage 1: Build the Spring Boot application
 FROM maven:3.9-eclipse-temurin-17 AS build
 
+ENV MAVEN_OPTS="-Xmx256m"
 WORKDIR /app
 
 # Copy the Maven project
